@@ -1,0 +1,21 @@
+This is a repository for Team 13's project.
+
+The team uses Android Studio to develop an app. To get this repository in Android Studio, complete the following steps (if you face problems, just contact Chris):
+  1. Install git on your computer. Download it from their official site: https://git-scm.com/downloads
+  2. Follow this guide on how to clone a Github repository to Android Studio: https://stackoverflow.com/questions/39233483/how-to-clone-project-from-the-github-in-android-studio
+  3. We work with branches - a Main branch that always has a working version of our code, and DEV branches for 
+  each team member to develop on. When you have cloned the repository, make sure to create a DEV branch named "DEV_yourName" 
+  and push that branch to the repository.
+
+In general, when using Github it is VERY important that you do NOT push to the Main branch before you know that your code works. 
+Make sure to do all development and testing on your designated DEV branch. Further, make sure that your DEV branch is up to date before 
+pushing to Main - if not, you will overwrite that latest work in the Main branch.
+
+We need to make sure that the code looks similar across the project - i.e. the code's appearance should not depend on who coded it. Therefore, please follow the following coding practices:
+  1. Naming conventions
+    1.1. All classes start with a capital letter
+    1.2. All variables and methods use the camelCase naming convention, i.e. if the name is one word, it starts with lower-case, 
+    and if it is multiple words the first word is lower-case, while the following are upper-case. Examples: "Team" is named as "team" while "This team" is names as "thisTeam".
+  2. Make sure to comment your code and use javadocs before each method. An example of javadocs is the piece of text before the 'start' 
+  method here: https://www.google.com/search?q=javadocs+example&source=lnms&tbm=isch&sa=X&ved=2ahUKEwin7ffW6sr2AhWPRPEDHauWB_QQ_AUoAXoECAEQAw&biw=1536&bih=746&dpr=1.25#imgrc=4eq7TMZQxSVY0M
+  3. Make code reusable by putting Strings, Layouts, Colors etc. into their designated folders in Android Studio.

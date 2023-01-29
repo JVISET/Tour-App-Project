@@ -1,0 +1,66 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/White</item>
+        <item name="colorPrimaryDark">@color/DarkBlue</item>
+        <item name="colorAccent">@color/LightBlue</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+    </style>
+
+    <style name="LightTheme" >
+        <!-- Text color -->
+        <item name="android:textColorPrimary">@color/White</item>
+        <!-- Divider color -->
+        <item name="colorControlNormal">@color/White</item>
+    </style>
+
+    <style name="DarkTheme" >
+        <!-- Text color -->
+        <item name="android:textColorPrimary">@color/DarkGrey</item>
+        <!-- Divider color -->
+        <item name="colorControlNormal">@color/DarkGrey</item>
+    </style>
+
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/dropdown</item>
+    </style>
+
+    <style name="ButtonGradient">
+        <item name="backgroundColor">@drawable/gradient_colour</item>
+        <item name="cornerRadius">35dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ButtonWhite">
+        <item name="backgroundColor">@color/White</item>
+        <item name="cornerRadius">15dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+</resources>
+
+
+
+
+
+
+
+
+

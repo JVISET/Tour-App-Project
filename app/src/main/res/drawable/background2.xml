@@ -1,0 +1,65 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The bottom layer is blue -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#4A77DD"
+                android:endColor="#3C5DA7"
+                android:type="radial"
+                android:gradientRadius="458dp"
+                android:centerX="0"
+                android:centerY="0"/>
+            <size android:height="851dp"
+                android:width="393dp" />
+        </shape>
+    </item>
+
+    <!-- The top later is rounded lightblue -->
+    <item android:top="65dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/TransluentBlue" />
+            <corners
+                android:topLeftRadius="35dp"
+                android:topRightRadius="35dp"
+                />
+        </shape>
+    </item>
+
+    <!-- Dropdown box -->
+    <item
+        android:top="90dp"
+        android:left="35dp"
+        android:right="35dp"
+        android:height="40dp"
+        android:width="325dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/White" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <item
+        android:top="142dp"
+        android:left="35dp"
+        android:right="35dp"
+        android:height="40dp"
+        android:width="325dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/White" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Text box -->
+    <item
+        android:top="196dp"
+        android:left="35dp"
+        android:right="35dp"
+        android:height="355dp"
+        android:width="323.5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/TransluentBlue" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+</layer-list>

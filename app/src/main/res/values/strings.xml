@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Assuming one user can book up to 5 tickets at a time -->
+    <string-array name="noOfPassengers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- Castles -->
+    <string-array name="planets_array">
+        <item>Select Castle</item>
+        <item>Alnwick Castle</item>
+        <item>Auckland Castle</item>
+        <item>Bamburgh Castle</item>
+        <item>Barnard Castle</item>
+    </string-array>
+
+    <!-- Departure stations -->
+    <string-array name="source">
+        <item>Eldon Square Bus Station</item>
+        <item>Haymarket Bus Station</item>
+    </string-array>
+
+    <!-- Bus stations at castle -->
+    <string-array name="source2">
+        <item>Select Bus station</item>
+        <item>Alnwick Bus Station</item>
+        <item>Auckland Bus Station</item>
+        <item>Bamburgh Bus Station</item>
+        <item>Barnard Bus Station</item>
+    </string-array>
+
+    <string name="app_name">TOUR</string>
+    <string name="outbound">Outbound</string>
+    <string name="instruction">Instruction</string>
+    <string name="alnwick_castle">Alnwick Castle</string>
+    <string name="from_eldon_square_bus_station">From Eldon Square Bus Station</string>
+    <string name="_10_35_16">10:35 | £16</string>
+    <string name="message_no_of_passengers">*Price calculated for</string>
+    <string name="passengers">passenger.</string>
+    <string name="price_calculated_for_x_passengers">1</string>
+    <string name="inbound">Inbound</string>
+    <string name="tuesday_8_march">Tuesday 8 March</string>
+    <string name="to_eldon_square_bus_station">Eldon Square Bus Station</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="restaurant">Restaurants</string>
+    <string name="attraction">Attractions</string>
+
+    <string name="map_id">35d4cee21707c0e9</string>
+    <string name="api_key">AIzaSyDxwEwUR21I4oURmaqu_B0TLUnViTx0Al8</string>
+
+    <string name="barnard_castle">Barnard Castle</string>
+
+    <!-- castles description   -->
+    <string name="alnwick_description">Alnwick Castle is one of the Britain\'s most historic and iconic castles</string>
+    <string name="auckland_description">Auckland Castle is one of the best-preserved bishops\' palaces in the whole of Europe and is at the centre of The Auckland Project</string>
+    <string name="bamburgh_description">Bamburgh Castle, the Kingdom of Northumbria\'s epicentre and home of the Armstrong family since 1894</string>
+    <string name="barnard_description">Barnard Castle is a market town on the north bank of the River Tees, in County</string>
+    <!-- string for activity_main.xml   -->
+    <string name="departs_from">Departs from:</string>
+    <string name="castle_image">Castle_image</string>
+    <string name="castle_info2">Castle info2</string>
+    <string name="castle_info1" tools:ignore="Typos">Castle info1</string>
+    <string name="book_ticket">Book Ticket</string>
+    <string name="image_view3">Image_view3</string>
+    <string name="choose_the_castle">Choose the castle:</string>
+    <!-- string for activity_booking.xml   -->
+    <string name="booking">Booking</string>
+    <string name="back">back</string>
+    <string name="castle_name">Castle name</string>
+    <string name="castle_price">£00.00</string>
+    <string name="total">Total</string>
+    <string name="image_view2">image_view2</string>
+    <string name="image_view1" tools:ignore="Typos">image_view1</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="booking_passengers">Passengers</string>
+    <string name="next">Next</string>
+    <!-- string for activity_attraction.xml   -->
+    <string name="select_your_location">Select your location</string>
+    <!-- string for activity_route.xml   -->
+    <string name="select_the_walking_route">Select the walking route</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="textview">TextView</string>
+    <!-- string for inbound.xml   -->
+    <string name="from_alnwick_castle">From Alnwick Castle</string>
+
+</resources>

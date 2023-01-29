@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Description: Choose the bus station and castle, and display the castle's image and information. -->
+<!--Author: Jirayut, Raj-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".CastleSelectionActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/pop_up_box_bg"
+        android:elevation="40dp"
+        app:elevation="40dp"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/bottom_nav_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TextView
+        android:id="@+id/origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="98dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/departs_from"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_View"
+        android:layout_width="318dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/passengerText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:id="@+id/castleImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/passengerText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerCrop"
+            android:elevation="20dp"
+            tools:srcCompat="@mipmap/ic_logo2_background"
+            android:contentDescription="@string/castle_image" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/castleInfo2"
+        android:layout_width="318dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/castleInfo1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/castle_info2"
+        android:textColor="@color/DarkGrey" />
+
+    <TextView
+        android:id="@+id/castleInfo1"
+        android:layout_width="321dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/image_View"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/castle_info1"
+        android:textColor="@color/DarkGrey"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/ButtonGradient"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/castleInfo2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/gradient_colour"
+        android:elevation="50dp"
+        android:fontFamily="@font/open_sans"
+        android:lineSpacingExtra="10sp"
+        android:text="@string/book_ticket"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:cornerRadius="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="146dp"
+        app:srcCompat="@drawable/ic_logo_header_svg"
+        android:contentDescription="@string/image_view3" />
+
+    <TextView
+        android:id="@+id/passengerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/origin"
+        android:layout_alignStart="@+id/origin"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="95dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/choose_the_castle"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
+
+    <Spinner
+        android:id="@+id/selectCastle"
+        style="@style/SpinnerTheme"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/passengerText"
+        android:layout_alignEnd="@+id/departStation"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toEndOf="@+id/passengerText"
+        android:dropDownVerticalOffset="35dp"
+        android:popupBackground="@drawable/popup_dropdown_bg"
+        android:popupElevation="20dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="viewStart"
+        android:theme="@style/DarkTheme"
+        android:verticalScrollbarPosition="right"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/departStation"
+        style="@style/SpinnerTheme"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/origin"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="40dp"
+        android:layout_toEndOf="@+id/origin"
+        android:dropDownVerticalOffset="35dp"
+        android:popupBackground="@drawable/popup_dropdown_bg"
+        android:popupElevation="20dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textStart"
+        android:theme="@style/DarkTheme"
+        android:verticalScrollbarPosition="right"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+</RelativeLayout>

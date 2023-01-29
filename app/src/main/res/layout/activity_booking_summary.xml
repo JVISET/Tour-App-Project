@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Description: Display all details before the payment-->
+<!--Author: Jirayut Visetsillapanont-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background4"
+    tools:context=".CastleSelectionActivity">
+
+    <TextView
+        android:id="@+id/textNote2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Note: "
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textDuration2"
+        app:layout_constraintTop_toBottomOf="@+id/textDuration2" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/pop_up_box_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/totalCastlePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="£0.00"
+        android:textColor="@color/DarkGrey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chosenCastleName" />
+
+    <TextView
+        android:id="@+id/totalOutboundPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="£0.00"
+        android:textColor="@color/DarkGrey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBusInfo1" />
+
+    <TextView
+        android:id="@+id/totalReturnPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="£0.00"
+        android:textColor="@color/DarkGrey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBusInfo2" />
+
+    <TextView
+        android:id="@+id/calculateCastlePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="sans-serif"
+        android:text="(£0.00 x 1)"
+        android:textColor="@color/DarkGrey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalCastlePrice"
+        app:layout_constraintTop_toTopOf="@+id/totalCastlePrice" />
+
+    <TextView
+        android:id="@+id/calculateOutboundPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif"
+        android:text="(£0.00 x 1)"
+        android:textColor="@color/DarkGrey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalOutboundPrice"
+        app:layout_constraintTop_toTopOf="@+id/totalOutboundPrice" />
+
+    <TextView
+        android:id="@+id/calculateReturnPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif"
+        android:text="(£0.00 x 1)"
+        android:textColor="@color/DarkGrey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalReturnPrice"
+        app:layout_constraintTop_toTopOf="@+id/totalReturnPrice" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Total"
+        android:textColor="@color/DarkGrey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalPrice"
+        app:layout_constraintTop_toTopOf="@+id/totalPrice" />
+
+    <TextView
+        android:id="@+id/textSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif"
+        android:text="Summary"
+        android:textColor="@color/DarkGrey"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerBooking" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="£00.00"
+        android:textColor="@color/DarkGrey"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textPassengers" />
+
+    <TextView
+        android:id="@+id/chosenCastleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Castle name"
+        android:textColor="@color/DarkGrey"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textChosenCastle"
+        app:layout_constraintTop_toBottomOf="@+id/textChosenCastle" />
+
+    <TextView
+        android:id="@+id/textChosenCastle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Chosen castle:"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textSummary"
+        app:layout_constraintTop_toBottomOf="@+id/textSummary" />
+
+    <TextView
+        android:id="@+id/textDate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Date"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/departureObStation"
+        app:layout_constraintTop_toBottomOf="@+id/departureObStation" />
+
+    <TextView
+        android:id="@+id/textDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Date"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/departureRtStation"
+        app:layout_constraintTop_toBottomOf="@+id/departureRtStation" />
+
+    <TextView
+        android:id="@+id/textDuration1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Duration: "
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textBusInfo1"
+        app:layout_constraintTop_toBottomOf="@+id/textBusInfo1" />
+
+    <TextView
+        android:id="@+id/textDuration2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Duration: "
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textBusInfo2"
+        app:layout_constraintTop_toBottomOf="@+id/textBusInfo2" />
+
+    <TextView
+        android:id="@+id/textPassengers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Passengers:"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageLine3"
+        app:layout_constraintTop_toBottomOf="@+id/imageLine3" />
+
+    <TextView
+        android:id="@+id/textBusInfo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bus info:"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/outboundDate"
+        app:layout_constraintTop_toBottomOf="@+id/outboundDate" />
+
+    <TextView
+        android:id="@+id/textBusInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bus info:"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/returnDate"
+        app:layout_constraintTop_toBottomOf="@+id/returnDate" />
+
+    <TextView
+        android:id="@+id/textTime1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="95dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Time"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departureObStation" />
+
+    <TextView
+        android:id="@+id/textTime2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Time"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textDate2" />
+
+    <TextView
+        android:id="@+id/textOutbound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Outbound"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageLine1"
+        app:layout_constraintTop_toTopOf="@id/imageLine1" />
+
+    <TextView
+        android:id="@+id/textReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Return"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageLine2"
+        app:layout_constraintTop_toBottomOf="@+id/imageLine2" />
+
+    <TextView
+        android:id="@+id/departureObStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="Departure station"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textOutbound"
+        app:layout_constraintTop_toBottomOf="@+id/textOutbound" />
+
+    <TextView
+        android:id="@+id/departureRtStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="Departure station"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textReturn"
+        app:layout_constraintTop_toBottomOf="@+id/textReturn" />
+
+    <TextView
+        android:id="@+id/outboundDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="Day, Date Month Year"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textDate1"
+        app:layout_constraintTop_toBottomOf="@+id/textDate1" />
+
+    <TextView
+        android:id="@+id/returnDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="Day, Date Month Year"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textDate2"
+        app:layout_constraintTop_toBottomOf="@+id/textDate2" />
+
+    <TextView
+        android:id="@+id/passengerNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="1"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textPassengers"
+        app:layout_constraintTop_toBottomOf="@+id/textPassengers" />
+
+    <TextView
+        android:id="@+id/outboundBusInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="OperatorName : Number"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textBusInfo1"
+        app:layout_constraintTop_toBottomOf="@+id/outboundDate" />
+
+    <TextView
+        android:id="@+id/returnBusInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif"
+        android:text="OperatorName : Number"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textBusInfo2"
+        app:layout_constraintTop_toTopOf="@+id/textBusInfo2" />
+
+    <TextView
+        android:id="@+id/outboundDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif"
+        android:text="00 hr 00 mins"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textDuration1"
+        app:layout_constraintTop_toTopOf="@+id/textDuration1" />
+
+    <TextView
+        android:id="@+id/returnDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif"
+        android:text="00 hr 00 mins"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textDuration2"
+        app:layout_constraintTop_toTopOf="@+id/textDuration2" />
+
+    <TextView
+        android:id="@+id/outboundTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="HH:MM"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textTime1"
+        app:layout_constraintTop_toBottomOf="@+id/textDate1" />
+
+    <TextView
+        android:id="@+id/returnTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="HH:MM"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textTime2"
+        app:layout_constraintTop_toTopOf="@+id/returnDate" />
+
+    <TextView
+        android:id="@+id/arrivalObStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Arrival station"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOutbound" />
+
+    <TextView
+        android:id="@+id/arrivalRtStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Arrival station"
+        android:textColor="@color/DarkGrey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/departureRtStation" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/Clear"
+        android:fontFamily="sans-serif"
+        android:text="back"
+        app:icon="@drawable/ic_back_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/chosenCastleName"
+        app:layout_constraintTop_toBottomOf="@+id/chosenCastleName"
+        app:srcCompat="@drawable/ic_line_svg" />
+
+    <ImageView
+        android:id="@+id/imageLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textDuration1"
+        app:layout_constraintTop_toBottomOf="@+id/textNote"
+        app:srcCompat="@drawable/ic_line_svg" />
+
+    <ImageView
+        android:id="@+id/imageLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textDuration2"
+        app:layout_constraintTop_toBottomOf="@+id/textNote2"
+        app:srcCompat="@drawable/ic_line_svg" />
+
+    <ImageView
+        android:id="@+id/imageTo"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/arrivalObStation"
+        app:layout_constraintStart_toEndOf="@+id/departureObStation"
+        app:layout_constraintTop_toBottomOf="@+id/textOutbound"
+        app:srcCompat="@drawable/ic_arrow_svg" />
+
+    <ImageView
+        android:id="@+id/imageTo2"
+        android:layout_width="13dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/arrivalRtStation"
+        app:layout_constraintStart_toEndOf="@+id/departureRtStation"
+        app:layout_constraintTop_toBottomOf="@+id/textReturn"
+        app:srcCompat="@drawable/ic_arrow_svg" />
+
+    <Button
+        android:id="@+id/buttonPay"
+        style="@style/ButtonGradient"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_colour"
+        android:text="Pay"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        app:cornerRadius="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/headerBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="Booking"
+        android:textColor="@color/White"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Note: "
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textDuration1"
+        app:layout_constraintTop_toBottomOf="@+id/textDuration1" />
+
+    <TextView
+        android:id="@+id/changeStationNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Change the bus at &quot;city&quot;"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textNote"
+        app:layout_constraintTop_toTopOf="@+id/textNote" />
+
+    <TextView
+        android:id="@+id/changeStationNote2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Change the bus at &quot;city&quot;"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textNote2"
+        app:layout_constraintTop_toTopOf="@+id/textNote2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_svg"/>
+<!--    <item-->
+<!--        android:id="@+id/booking"-->
+<!--        android:title="Booking"-->
+<!--        android:icon="@drawable/ic_booking_svg"/>-->
+    <item
+        android:id="@+id/route"
+        android:title="Route"
+        android:icon="@drawable/ic_route_svg"/>
+    <item
+        android:id="@+id/restaurants"
+        android:title="Restaurants"
+        android:icon="@drawable/ic_restaurant_svg" />
+    <item
+        android:id="@+id/attractions"
+        android:title="Attractions"
+        android:icon="@drawable/ic_attraction_svg"/>
+
+</menu>

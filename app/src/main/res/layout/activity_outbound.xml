@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Description: Display list of the available time and price for return journey-->
+<!--Author: Jirayut, Julia-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1_gradient"
+    tools:context=".CastleSelectionActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/pop_up_box_bg"
+        android:elevation="40dp"
+        app:elevation="40dp"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <Button
+        android:id="@+id/buttonBack3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="sans-serif"
+        android:text="@string/back"
+        app:icon="@drawable/ic_back_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/castle_name"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:inputType="textPersonName"
+        android:text="@string/alnwick_castle"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerBooking"
+        tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/outboundBusStation"
+        android:layout_width="277dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:inputType="textPersonName"
+        android:text="@string/from_eldon_square_bus_station"
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/castle_name"
+        app:layout_constraintTop_toBottomOf="@+id/castle_name"
+        tools:ignore="Autofill,LabelFor,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/tuesday_8_march"
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/outboundBusStation"
+        app:layout_constraintTop_toBottomOf="@+id/outboundBusStation"
+        tools:ignore="Autofill,LabelFor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="415dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="403dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="436dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="682dp" />
+
+    <TextView
+        android:id="@+id/headerBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/outbound"
+        android:textColor="@color/White"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="324dp"
+        android:layout_height="590dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="60dp">
+
+
+        <Button
+            android:id="@+id/timeButton10"
+            style="@style/ButtonWhite"
+            android:layout_width="323dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/TransluentBlue"
+            android:elevation="20dp"
+            android:ellipsize="start"
+            android:text="@string/_10_35_16"
+            android:textColor="@color/DarkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/White" />
+
+        <Button
+            android:id="@+id/timeButton11"
+            style="@style/ButtonWhite"
+            android:layout_width="323dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/TransluentBlue"
+            android:elevation="20dp"
+            android:ellipsize="start"
+            android:text="@string/_10_35_16"
+            android:textColor="@color/DarkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/White" />
+
+        <Button
+            android:id="@+id/timeButton12"
+            style="@style/ButtonWhite"
+            android:layout_width="323dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/TransluentBlue"
+            android:elevation="20dp"
+            android:ellipsize="start"
+            android:text="@string/_10_35_16"
+            android:textColor="@color/DarkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/White" />
+
+        <Button
+            android:id="@+id/timeButton13"
+            style="@style/ButtonWhite"
+            android:layout_width="323dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/TransluentBlue"
+            android:ellipsize="start"
+            android:text="@string/_10_35_16"
+            android:textColor="@color/DarkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/White" />
+
+        <Button
+            android:id="@+id/timeButton14"
+            style="@style/ButtonWhite"
+            android:layout_width="323dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/TransluentBlue"
+            android:ellipsize="start"
+            android:text="@string/_10_35_16"
+            android:textColor="@color/DarkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/White" />
+
+        <EditText
+            android:id="@+id/disclaimer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/open_sans"
+            android:inputType="textPersonName"
+            android:text="@string/price_calculated_for_x_passengers"
+            android:textColor="@color/White"
+            android:textSize="12sp"
+            android:textStyle="bold|italic"
+            tools:ignore="Autofill,LabelFor" />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

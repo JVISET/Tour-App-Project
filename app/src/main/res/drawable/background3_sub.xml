@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The bottom layer is blue -->
+    <item>
+        <shape>
+            <size android:height="511dp"
+                android:width="393dp" />
+        </shape>
+    </item>
+
+    <!-- Spinner box -->
+    <item
+        android:top="38dp"
+        android:left="35dp"
+        android:right="35dp"
+        android:height="110dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/TransluentBlue" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+
+    <item
+        android:top="178dp"
+        android:left="35dp"
+        android:right="35dp"
+        android:height="110dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/TransluentBlue" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+
+    <item
+        android:top="299dp"
+        android:left="130dp"
+        android:right="35dp"
+        android:height="30dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/TransluentBlue" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+</layer-list>
